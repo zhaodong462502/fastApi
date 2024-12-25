@@ -1,0 +1,64 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "01_uvicorn_server_demo.main",
+        "description": "01_uvicorn_server_demo.main",
+        "peekOfCode": "app = FastAPI()\n@app.get(\"/\")\nasync def read_root():\n    return {\"Hello\": \"World\"}\n@app.get(\"/items/{item_id}\")\nasync def read_item(item_id: int, q: str = None):\n    return {\"item_id\": item_id, \"q\": q}",
+        "detail": "01_uvicorn_server_demo.main",
+        "documentation": {}
+    },
+    {
+        "label": "merge_sort",
+        "kind": 2,
+        "importPath": "01_uvicorn_server_demo.test",
+        "description": "01_uvicorn_server_demo.test",
+        "peekOfCode": "def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    # 将数组分成两半\n    mid = len(arr) // 2\n    left = arr[:mid]\n    right = arr[mid:]\n    # 递归排序两半\n    left = merge_sort(left)\n    right = merge_sort(right)",
+        "detail": "01_uvicorn_server_demo.test",
+        "documentation": {}
+    },
+    {
+        "label": "merge",
+        "kind": 2,
+        "importPath": "01_uvicorn_server_demo.test",
+        "description": "01_uvicorn_server_demo.test",
+        "peekOfCode": "def merge(left, right):\n    result = []\n    i = j = 0\n    # 比较两个数组的元素并合并\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])",
+        "detail": "01_uvicorn_server_demo.test",
+        "documentation": {}
+    },
+    {
+        "label": "quick_sort",
+        "kind": 2,
+        "importPath": "01_uvicorn_server_demo.test",
+        "description": "01_uvicorn_server_demo.test",
+        "peekOfCode": "def quick_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)\ndef partition(arr, low, high):\n    pivot = arr[high]",
+        "detail": "01_uvicorn_server_demo.test",
+        "documentation": {}
+    },
+    {
+        "label": "partition",
+        "kind": 2,
+        "importPath": "01_uvicorn_server_demo.test",
+        "description": "01_uvicorn_server_demo.test",
+        "peekOfCode": "def partition(arr, low, high):\n    pivot = arr[high]\n    i = low - 1\n    for j in range(low, high):\n        if arr[j] <= pivot:\n            i += 1\n            arr[i], arr[j] = arr[j], arr[i]\n    arr[i + 1], arr[high] = arr[high], arr[i + 1]\n    return i + 1\ndef quick_sort_in_place(arr, low=None, high=None):",
+        "detail": "01_uvicorn_server_demo.test",
+        "documentation": {}
+    },
+    {
+        "label": "quick_sort_in_place",
+        "kind": 2,
+        "importPath": "01_uvicorn_server_demo.test",
+        "description": "01_uvicorn_server_demo.test",
+        "peekOfCode": "def quick_sort_in_place(arr, low=None, high=None):\n    if low is None:\n        low = 0\n    if high is None:\n        high = len(arr) - 1\n    if low < high:\n        print(f\"low: {low}, high: {high}\")\n        pivot_index = partition(arr, low, high)\n        quick_sort_in_place(arr, low, pivot_index - 1)\n        quick_sort_in_place(arr, pivot_index + 1, high)",
+        "detail": "01_uvicorn_server_demo.test",
+        "documentation": {}
+    }
+]
